@@ -21,13 +21,26 @@ void config_port_io(){
     gpio_set_dir(BUZZER_PIN, GPIO_OUT);
     gpio_init(P_BUTTON_A);
     gpio_set_dir(P_BUTTON_A, GPIO_IN);
+
+    gpio_put(GPIO_LED_R, 0);
+    gpio_put(GPIO_LED_G, 0);
+    gpio_put(GPIO_LED_B, 0);
+    gpio_put(BUZZER_PIN, 0);
+}
+void gpio_put_rgb(bool r, bool g, bool b) {
+    gpio_put(GPIO_LED_R, r);
+    gpio_put(GPIO_LED_G, g);
+    gpio_put(GPIO_LED_B, b);
+}
+void aciona_buzzer(){
+    gpio_put(BUZZER_PIN, 1);
+    sleep_ms(5000);
+    gpio_put(BUZZER_PIN, 0);
+    sleep_ms(500);
 }
 int main()
 {
     stdio_init_all();
-
-    while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
-    }
+    config_port_io();
+   
 }
