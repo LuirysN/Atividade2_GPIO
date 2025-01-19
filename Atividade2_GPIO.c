@@ -35,11 +35,12 @@ void gpio_put_rgb(bool r, bool g, bool b) {
     gpio_put(GPIO_LED_G, g);
     gpio_put(GPIO_LED_B, b);
 }
+
+//função para acionar o buzzer
 void aciona_buzzer(){
     gpio_put(BUZZER_PIN, 1);
-    sleep_ms(5000);
+    sleep_ms(2000);
     gpio_put(BUZZER_PIN, 0);
-    sleep_ms(500);
 }
 int main()
 {
