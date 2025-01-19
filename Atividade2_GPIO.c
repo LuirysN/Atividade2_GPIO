@@ -30,6 +30,7 @@ void config_port_io(){
     gpio_put(GPIO_LED_B, 0);
     gpio_put(BUZZER_PIN, 0);
 }
+//função para ligar/desligar os leds
 void gpio_put_rgb(bool r, bool g, bool b) {
     gpio_put(GPIO_LED_R, r);
     gpio_put(GPIO_LED_G, g);
@@ -38,12 +39,13 @@ void gpio_put_rgb(bool r, bool g, bool b) {
 
 //função para acionar o buzzer
 void aciona_buzzer(){
-    gpio_put(BUZZER_PIN, 1);
-    sleep_ms(2000);
-    gpio_put(BUZZER_PIN, 0);
+    gpio_put(BUZZER_PIN, 1); //liga o buzzer
+    sleep_ms(2000);          //espera 2s
+    gpio_put(BUZZER_PIN, 0); //desliga o buzzer
 }
 
 //menu
+//função para exibir o menu
 void display_menu(){
     
     printf("\nComando disponiveis:\n");
@@ -59,7 +61,7 @@ void display_menu(){
 
 int main()
 {
-    stdio_init_all();
-    config_port_io();
+    stdio_init_all(); //inicializa a comunicação serial
+    config_port_io(); //configura os GPIOs
    
 }
