@@ -3,6 +3,17 @@
 
 Este repositório foi criado para atendimento à atividade II (Participativa): Controle de pinos GPIO da ferramenta educacional BitDogLab.Implementa o controle de LEDs RGB e um buzzer utilizando o Push Button A da placa de desenvolvimento BitDogLab. 
 
+## EQUIPE
+
+- **Líder:** 
+  - LUIRYS DO NASCIMENTO SILVA.
+- **Desenvolvedores:**
+  - CAMILLA MATOS ARAUJO;
+  - FREDSON PEREIRA DE OLIVEIRA SANTOS;
+  - JACKSON DA SILVA CARNEIRO;
+  - LUIZ FILIPE RIBEIRO DE JESUS;
+  - VITOR SOARES NASCIMENTO LEAL.
+
 ## Descrição
 
 - **Microcontrolador**: Raspberry Pi Pico W (RP2040)
