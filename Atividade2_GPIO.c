@@ -42,6 +42,21 @@ void aciona_buzzer(){
     sleep_ms(2000);
     gpio_put(BUZZER_PIN, 0);
 }
+
+//menu
+void display_menu(){
+    
+    printf("\nComando disponiveis:\n");
+    printf("g - Ligar LED verde\n");
+    printf("b - Ligar LED azul\n");
+    printf("r - Ligar LED vermelho\n");
+    printf("w - Ligar os 3 LEDs (branco)\n");
+    printf("o - Desligar todos os LEDs\n");
+    printf("z - Acionar o buzzer\n");
+    printf("q - Sair do programa\n");
+
+}
+
 int main()
 {
     stdio_init_all();
