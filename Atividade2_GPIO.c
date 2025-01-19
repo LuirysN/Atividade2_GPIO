@@ -45,7 +45,7 @@ void aciona_buzzer(){
 
 //menu
 void display_menu(){
-    
+
     printf("\nComando disponiveis:\n");
     printf("g - Ligar LED verde\n");
     printf("b - Ligar LED azul\n");
@@ -57,9 +57,45 @@ void display_menu(){
 
 }
 
-int main()
-{
+int main(){
     stdio_init_all();
     config_port_io();
    
+   char command;
+
+   while (true){
+        display_menu();
+
+        printf("\nDigite um comando: ");
+        command = getchar();
+        getchar();
+
+        //usando switch para escolha de opção do user
+        switch (command){
+            case 'g':
+                gpio_put_rgb(0, 1, 0);
+                break;
+            case 'b':
+                gpio_put_rgb(0, 0, 1);
+                break;
+            case 'r':
+                gpio_put_rgb(1, 0, 0);
+                break;
+            case 'w':
+                gpio_put_rgb(1, 1, 1);
+                break;
+            case 'o':
+                gpio_put_rgb(0, 0, 0);
+                break;
+            case 'z':
+                aciona_buzzer();
+                break;
+            case 'q':
+                printf("Saindo...\n");
+                return 0;
+            default:
+                printf("Comando inválido. Digite novamente.\n");
+        }
+   }
+
 }
