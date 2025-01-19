@@ -56,7 +56,7 @@ void display_menu(){
     printf("q - Sair do programa\n");
 
 }
-
+//funcão principal do código
 int main(){
     stdio_init_all();
     config_port_io();
