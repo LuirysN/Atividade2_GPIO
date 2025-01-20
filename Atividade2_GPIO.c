@@ -59,9 +59,37 @@ void display_menu(){
 
 }
 
-int main()
-{
+int main() {
     stdio_init_all(); //inicializa a comunicação serial
     config_port_io(); //configura os GPIOs
-   
+
+    while (1) {
+        display_menu();
+        char command = getchar(); // Lê o comando do usuário
+        switch (command) {
+            case 'g':
+                gpio_put_rgb(0, 1, 0); // Liga LED verde
+                break;
+            case 'b':
+                gpio_put_rgb(0, 0, 1); // Liga LED azul
+                break;
+            case 'r':
+                gpio_put_rgb(1, 0, 0); // Liga LED vermelho
+                break;
+            case 'w':
+                gpio_put_rgb(1, 1, 1); // Liga todos os LEDs (branco)
+                break;
+            case 'o':
+                gpio_put_rgb(0, 0, 0); // Desliga todos os LEDs
+                break;
+            case 'z':
+                aciona_buzzer(); // Aciona o buzzer
+                break;
+            case 'q':
+                return 0; // Sai do programa
+            default:
+                printf("Comando inválido!\n");
+                break;
+        }
+    }
 }
